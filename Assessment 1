@@ -1,1 +1,27 @@
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.speed = 0
 
+    def accelerate(self, increment):
+        self.speed += increment
+
+    def decelerate(self, decrement):
+        self.speed -= decrement
+
+    def get_speed(self):
+        return self.speed
+
+    def get_description(self):
+        return f"{self.year} {self.make} {self.model}"
+        
+my_car = Car("Toyota", "Camry", 2021)
+print(my_car.get_description())  # Output: 2021 Toyota Camry
+
+my_car.accelerate(20)
+print(my_car.get_speed())  # Output: 20
+
+my_car.decelerate(5)
+print(my_car.get_speed())  # Output: 15    
